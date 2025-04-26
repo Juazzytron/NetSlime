@@ -6,13 +6,11 @@ import numpy as np  # type: ignore
 import tcod
 
 from engine.actions import Action, MeleeAction, MovementAction, WaitAction
-from engine.components.basecomponent import BaseComponent
 
 if TYPE_CHECKING:
     from engine.entity import Actor
 
-class BaseAI(Action, BaseComponent):
-    entity: Actor
+class BaseAI(Action):
 
     def perform(self) -> None:
         raise NotImplementedError()
